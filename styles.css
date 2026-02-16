@@ -1,29 +1,28 @@
 /* Your CSS goes here! */
 .table {
-    border: 3px solid black;
+    border: 1px solid black;
 }
 
 .projects {
-    font-family: "Lucida Handwriting", cursive;
-    color: lightseagreen;
+    
 }
 
 .project_description{
-    font-family: fantasy;
+    
 }
 
 .about_description{
-    font-family: fantasy;
+    
 }
 
 .h1 {
-    font-family: fantasy;
+    color: rgb(73, 32, 178);
 }
 
 .thead {
-    font-family: fantasy;
+    
 }
 
 .tbody {
-    font-family: "Lucida Handwriting", cursive;
+    
 }
