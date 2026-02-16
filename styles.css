@@ -3,26 +3,14 @@
     border: 1px solid black;
 }
 
-.projects {
-    
-}
-
-.project_description{
-    
-}
-
-.about_description{
-    
-}
-
 .h1 {
-    color: rgb(73, 32, 178);
+    color: rgb(8, 214, 43);
 }
 
-.thead {
-    
+.font {
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.tbody {
-    
+.hyperlink {
+    color:rgb(185, 185, 185)
 }
