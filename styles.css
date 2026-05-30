@@ -1,16 +1,3 @@
-/* Your CSS goes here! */
-.table {
-    border: 1px solid black;
-}
-
-.h1 {
-    color: rgb(110, 185, 5);
-}
-
-.font {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.hyperlink {
-    color:rgb(135, 133, 133)
+body {
+  font-family: 'Spline Sans', sans-serif;
 }
