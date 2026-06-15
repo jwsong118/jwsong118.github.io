@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jae Woo Song</title>
+    <title>Coursework - Jae Woo Song</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Spline Sans (400 = normal, 700 = bold for headings) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
 <body class="bg-stone-50 text-stone-800 min-h-screen">
 
     <nav class="max-w-3xl mx-auto flex items-center px-6 py-6">
-        <div class="flex gap-6 text-sm">
+        <div class="flex gap-6">
         <a href="index.html" class="hover:text-amber-700 transition-colors" aria-current="page">Home</a>
         <a href="coursework.html" class="hover:text-amber-700 transition-colors">Coursework</a>
         <a href="blog.html" class="hover:text-amber-700 transition-colors">Blog</a>
@@ -25,7 +25,7 @@
     <main class="max-w-3xl mx-auto px-6 pb-24">
 
         <h1 class="text-4xl font-bold pt-8 mb-2">Coursework</h1>
-        <p class="text-stone-600 mb-10">Major related courses completed at UW&ndash;Madison.</p>
+        <p class="text-stone-800 mb-10">Summary of Computer Science related courses at UW&ndash;Madison.</p>
 
         <!-- CS -->
         <section class="mb-10">
@@ -35,16 +35,90 @@
             class="text-sm text-amber-700 hover:underline">Course catalog &nearr;</a>
         </div>
         <ul class="space-y-2">
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">CS 200</span><span>Programming 1</span></li>
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">CS 252</span><span>Intro to Computer Engineering</span></li>
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">CS 300</span><span>Programming 2</span></li>
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">CS 354</span><span>Machine Organization &amp; C Programming</span></li>
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">CS 400</span><span>Programming 3</span></li>
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">CS 435</span><span>Intro to Cryptography</span></li>
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">CS 472</span><span>Intro to Web Development</span></li>
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">CS 537</span><span>Intro to Operating Systems</span></li>
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">CS 540</span><span>Intro to Artificial Intelligence</span></li>
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">CS 640</span><span>Intro to Computer Networks</span></li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Intro to Computer Networks (CS 640):</span>
+                <span>
+                    Introductory course in the field of systems (CS). We basically learn how the internet works. More specifically 
+                    we go through, network performance, the physical layer (encoding), the link layer (framing & error handling, 
+                    L2 switching, ethernet, L2 reliable transmission), the network layer (IP introduction, efficient addressing, 
+                    distance vector routing, link state routing, inter-domain routing, NAT & IPv6 & multicast), 
+                    the transport layer (introduction, TCP connection management, TCP reliability support, TCP congestion control, 
+                    TCP in-network support, Linux networking stack), network security, and the application layer (network applications, 
+                    QUIC).
+                </span>
+            </li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Intro to Artificial Intelligence (CS 540):</span>
+                <span>
+                    (Currently studying)
+                </span>
+            </li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Intro to Operating Systems (CS 537):</span>
+                <span>
+                    Introductory course in the field of systems (CS). We learn how the OS serves as an interface between hardware
+                    and applications. More specifically we go through virtualization (processes, scheduling, allocation, paging, 
+                    TLB, multilevel page tables, swapping), concurrency (concurrency, locks, condition variables, 
+                    deadlock, race detection), and persistence (I/O devices & HDD, SSD, file systems, FFS, LFS, journaling, 
+                    RAID, container, distributed systems, VMM).
+                </span>
+            </li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Intro to Web Development (CS 472):</span>
+                <span>
+                    Introductory course in web development. We learn how to create and maintain web content. More specifically 
+                    we go through, CMS, HTML, CSS, how the internet is made up, JavaScript (data types, control flow, 
+                    functions, lists, loops, XSS, REGEX, function as first-class citizen, interacting with APIs), 
+                    user experience & user testing, and security in web development. 
+                </span>
+            </li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Programming 3 (CS 400):</span>
+                <span>
+                    Third foundational course from the Java programming course sequence.
+                    We learn industry standards, more data structures, graph traversal algorithms, and complexity analysis.
+                    More specifically we go through, bash, SSH, Git version control, Make, BST rotations, Red-Black &
+                    B & AVL trees, anonymous classes & lambda expressions, Sets & Graphs, Spanning Trees,
+                    Prim's & Kruskal's & Dijkstra's algorithms, webservers, linear sorts, hash tables, javaFX, skip lists, 
+                    streams and regex.
+                </span>
+            </li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Machine Organization &amp; Programming (CS 354):</span>
+                <span>
+                    Second foundational course from the Computer Engineering course sequence.
+                    We learn the structures of computer systems. More specifically we go through, learning the C programming language,
+                    I/O, virtual memory, heap & dynamic memory access, locality & cache, assembly & machine code, communication &
+                    interrupts, compiling and assembling.
+                </span>
+            </li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Programming 2 (CS 300):</span>
+                <span>
+                    Second foundational course from the Java programming course sequence.
+                    We learn intermediate Object-Oriented programming. More specifically we go through, a review
+                    of basic Java programming, Inheritance & Interfaces & generics, algorithm analysis, recursion,
+                    searching & sorting, and analyzing different algorithms & data structure implementations of several
+                    abstract data types (Lists, Stacks, Queues, Binary Search Trees, Heaps)
+                </span>
+            </li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Intro to Computer Engineering (CS 252):</span>
+                <span>
+                    First foundational course from the Computer Engineering course sequence.
+                    We learn how the computer really operates from the transistors and up.
+                    More specifically we go through, basic boolean algebra, basic combinational & sequential logic design, 
+                    basic computer organization, and basic "LC3" assembly language programming.
+                </span>
+            </li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Programming 1 (CS 200):</span>
+                <span>
+                    First optional foundational course from the Java programming course sequence.
+                    We learn the basic Object-Oriented programming process. More specifically we go through, basic data types, flow control 
+                    (branching, methods, and loops), array(list)s, and I/O processing techniques.
+                </span>
+            </li>
         </ul>
         </section>
 
@@ -56,9 +130,42 @@
             class="text-sm text-amber-700 hover:underline">Course catalog &nearr;</a>
         </div>
         <ul class="space-y-2">
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">MATH/CS 240</span><span>Intro to Discrete Mathematics</span></li>
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">MATH 331</span><span>Introductory Probability</span></li>
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">MATH 340</span><span>Elementary Matrix and Linear Algebra</span></li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Intro to Cryptography (MATH/CS 435):</span>
+                <span>
+                    Introductory course in the field of theory (CS). We learn the science of protecting information. More specifically 
+                    we go through, classical cryptography (ancient cryptography, perfectly secure encryption), private-key 
+                    cryptography (computational security, IND-CPA, cryptographic reductions, pseudo random functions,
+                    PRF to encryption, PRG & PRP, block ciphers, MAC, hash functions, IND-CCA security), and public-key 
+                    cryptography (number theory, DLog & CDH & DDH, public-key cryptography, digital signature & certificate).
+                </span>
+            </li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Elementary Matrix and Linear Algebra (MATH 340):</span>
+                <span>
+                    Foundational course in Linear Algebra. The topics we learn in depth are systems of linear equations,
+                    matrix algebra, determinants and diagonalization, vector spaces, linear transformations, 
+                    change of basis, and inner product spaces.
+                </span>
+            </li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Introductory Probability (MATH 331):</span>
+                <span>
+                    Foundational course in Probability. The topics we learn in depth are axioms of probability, 
+                    conditional probability & independence, random variables, approximations of the binomial distribution,
+                    joint distribution of random variables, expectation & variance in a multivariate setting,
+                    tail bounds & limit theorems, and conditional distribution.
+                </span>
+            </li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Intro to Discrete Mathematics (MATH/CS 240):</span>
+                <span>
+                    Foundational course in Discrete Mathematics. We learn basic concepts of mathematics with a
+                    focus on discrete structures. The topics we cover in depth are integer properties, logic, proofs,
+                    sets, functions, computation, induction & recursion, relations/digraphs, intro to counting, graphs,
+                    and trees.
+                </span>
+            </li>
         </ul>
         </section>
 
@@ -70,7 +177,12 @@
             class="text-sm text-amber-700 hover:underline">Course catalog &nearr;</a>
         </div>
         <ul class="space-y-2">
-            <li class="flex gap-3"><span class="font-medium text-amber-800 shrink-0 w-28">STAT 451</span><span>Intro to Machine Learning & Statistical Pattern Classification</span></li>
+            <li class="flex gap-3 items-start">
+                <span class="font-medium text-amber-800 shrink-0 w-52">Intro to Machine Learning &amp; Statistical Pattern Classification (STAT 451):</span>
+                <span>
+                    (Currently studying)
+                </span>
+            </li>
         </ul>
         </section>
 
