@@ -1,4 +1,4 @@
-# jwsong118.github.io
+# jaewoosong.github.io
 
 ## Description
 Welcome to my webpage!
