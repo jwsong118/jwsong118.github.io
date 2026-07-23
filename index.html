@@ -13,51 +13,46 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 
-<body class="bg-stone-50 text-stone-800 min-h-screen">
+<body class="bg-stone-50 text-stone-900 min-h-screen">
 
-    <!--
-    <nav class="max-w-3xl mx-auto flex items-center px-6 py-6">
+    <nav class="sticky top-0 z-50 max-w-3xl mx-auto flex items-center px-6 py-4 bg-stone-200/90 backdrop-blur-sm rounded-b-xl">
         <div class="flex gap-6">
-        <a href="index.html" class="hover:text-amber-700 transition-colors" aria-current="page">Home</a>
-        <a href="coursework.html" class="hover:text-amber-700 transition-colors">Coursework</a>
-        <a href="blog.html" class="hover:text-amber-700 transition-colors">Blog</a>
+            <a href="index.html" class="hover:text-amber-700 transition-colors" aria-current="page">Home</a>
+            <!-- <a href="coursework.html" class="hover:text-amber-700 transition-colors">Coursework</a> -->
+            <!-- <a href="blog.html" class="hover:text-amber-700 transition-colors">Blog</a> -->
         </div>
     </nav>
-    -->
 
     <main class="max-w-3xl mx-auto px-6 space-y-16 pb-24">
 
         <!-- INTRO -->
         <section class="flex flex-col sm:flex-row items-center gap-8 pt-8">
-        <img
-            src="jaewoo.jpg"
-            alt="Jae Woo Song"
-            class="w-40 h-40 md:w-56 md:h-56 rounded-xl object-cover shadow-md shrink-0"
-        >
-        <div>
-            <h1 class="text-4xl font-bold leading-tight">Jae Woo Song</h1>
-            <p class="text-stone-800 leading-relaxed">
-            ("Jae Woo" is my full first name)
-            </p>
-            <p class="mt-3 text-stone-800 leading-relaxed">
-            Email: song347{at}wisc.edu 
-            </p>
-            <p class="text-blue-800 leading-relaxed">
-                <a href="https://github.com/jwsong118" class="hover:text-amber-700 hover:underline transition-colors mr-2">
-                    Github: <i class="fab fa-github"></i>
-                </a>
-                <a class="mt-3 text-stone-800 leading-relaxed">|</a> 
-                <a href="coursework.html" class="hover:text-amber-700 hover:underline transition-colors ml-2">
-                    Coursework: <i class="fas fa-book"></i>
-                </a>
-            </p>
-            <p class="mt-3 text-stone-800 leading-relaxed">
-            I am an undergraduate studying Computer Science (major) and Math (certificate) at UW&ndash;Madison.
-            </p>
-        </div>
+            <img
+                src="jaewoo.jpg"
+                alt="Jae Woo Song"
+                class="w-40 h-40 md:w-56 md:h-56 rounded-xl object-cover shadow-md shrink-0"
+            >
+            <div>
+                <h1 class="text-4xl font-bold leading-tight">Jae Woo Song</h1>
+                <p class="text-stone-900 leading-relaxed">
+                ("Jae Woo" is my full first name)
+                </p>
+                <p class="mt-3 text-stone-900 leading-relaxed">
+                Email: song347{at}wisc.edu 
+                </p>
+                <p class="text-blue-800 leading-relaxed">
+                    <a href="https://github.com/jwsong118" class="hover:text-amber-700 hover:underline transition-colors mr-2">
+                        Github: <i class="fab fa-github"></i>
+                    </a>
+                    <!-- <a class="mt-3 text-stone-900 leading-relaxed">|</a> --> 
+                </p>
+                <p class="mt-3 text-stone-900 leading-relaxed">
+                I am an undergraduate studying Computer Science (major) and Math (certificate) at UW&ndash;Madison.
+                </p>
+            </div>
         </section>
 
-        <section class="grid gap-4">
+        
 
         <!-- COURSEWORK
         <a href="coursework.html"
@@ -81,7 +76,24 @@
         </a>
         -->
 
+        <!-- Education-->
+        <section class="mb-10">
+                <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
+                    <h2 class="text-xl">Education</h2>
+                </div>
+                <ul>
+                    <li class="flex flex-col gap-1">
+                            <span>University of Wisconsin-Madison (expected: May 2027)</span>
+                        <div>
+                            <span>B.S. in Computer Science, Certificate in Mathematics</span>
+                            <a href="coursework.html" class="text-blue-800 hover:text-amber-700 hover:underline transition-colors ml-1">
+                                [Coursework <i class="fas fa-book text-xs"></i>]
+                            </a>
+                        </div>
+                    </li>
+                </ul>
         </section>
+
     </main>
 </body>
 </html>
