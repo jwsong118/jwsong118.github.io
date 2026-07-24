@@ -15,11 +15,13 @@
 
 <body class="bg-stone-50 text-stone-900 min-h-screen">
 
-    <nav class="sticky top-0 z-50 max-w-3xl mx-auto flex items-center px-6 py-4 bg-stone-200/90 backdrop-blur-sm rounded-b-xl">
-        <div class="flex gap-6">
-            <a href="index.html" class="hover:text-amber-700 transition-colors" aria-current="page">Home</a>
-            <!-- <a href="coursework.html" class="hover:text-amber-700 transition-colors">Coursework</a> -->
-            <!-- <a href="blog.html" class="hover:text-amber-700 transition-colors">Blog</a> -->
+    <nav class="sticky top-0 z-50 w-full bg-white border-b border-stone-300">
+        <div class="max-w-3xl mx-auto flex items-center px-6 py-4">
+            <div class="flex gap-6">
+                <a href="index.html" class="hover:text-amber-700 transition-colors" aria-current="page">Home</a>
+                <!-- <a href="coursework.html" class="hover:text-amber-700 transition-colors">Coursework</a> -->
+                <!-- <a href="blog.html" class="hover:text-amber-700 transition-colors">Blog</a> -->
+            </div>
         </div>
     </nav>
 
@@ -35,13 +37,13 @@
             <div>
                 <h1 class="text-4xl font-bold leading-tight">Jae Woo Song</h1>
                 <p class="text-stone-900 leading-relaxed">
-                ("Jae Woo" is my full first name)
+                ("Jae-Woo" is my full first name)
                 </p>
                 <p class="mt-3 text-stone-900 leading-relaxed">
                 Email: song347{at}wisc.edu 
                 </p>
-                <p class="text-blue-800 leading-relaxed">
-                    <a href="https://github.com/jwsong118" class="hover:text-amber-700 hover:underline transition-colors mr-2">
+                <p class="text-amber-700 leading-relaxed">
+                    <a href="https://github.com/jwsong118" class="hover:underline">
                         Github: <i class="fab fa-github"></i>
                     </a>
                     <!-- <a class="mt-3 text-stone-900 leading-relaxed">|</a> --> 
@@ -81,14 +83,16 @@
                 <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
                     <h2 class="text-xl">Education</h2>
                 </div>
-                <ul>
-                    <li class="flex flex-col gap-1">
-                            <span>University of Wisconsin&ndash;Madison (expected graduation: May 2027)</span>
-                        <div>
-                            <span>B.S. in Computer Science, Certificate in Mathematics</span>
-                            <a href="coursework.html" class="text-blue-800 hover:text-amber-700 hover:underline transition-colors ml-1">
-                                [Coursework <i class="fas fa-book text-xs"></i>]
-                            </a>
+                <ul class="list-disc ml-5 space-y-3">
+                    <li>
+                        <div class="flex flex-col gap-1">
+                            <span>B.S. in Computer Science, University of Wisconsin&ndash;Madison (expected graduation: May 2027)</span>
+                            <span>Certificate in Mathematics, University of Wisconsin&ndash;Madison (expected graduation: May 2027)</span>
+                            <div>
+                                <a href="coursework.html" class="text-amber-700 hover:underline">
+                                    [Coursework <i class="fas fa-book text-xs"></i>]
+                                </a>
+                            </div>
                         </div>
                     </li>
                 </ul>
