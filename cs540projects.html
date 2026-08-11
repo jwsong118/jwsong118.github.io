@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 540 projects - Jae Woo Song</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Spline Sans (400 = normal, 700 = bold for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-stone-50 text-stone-900 min-h-screen">
+
+    <nav class="sticky top-0 z-50 w-full bg-white border-b border-stone-300">
+        <div class="max-w-4xl mx-auto flex items-center px-6 py-4">
+            <div class="flex gap-6">
+                <a href="index.html" class="hover:text-amber-700 transition-colors" aria-current="page">Home</a>
+                <a href="research.html" class="hover:text-amber-700 transition-colors" aria-current="page">Research/Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 pb-24">
+
+        <h1 class="text-4xl font-bold pt-8 mb-2">CS 540: Intro to AI, Competition Projects</h1>
+        <p class="text-stone-900 mb-10">
+            CS 540: Intro to AI (with professor Young Wu) at UW-Madison, had 
+            ten projects throughout the semester. We were allowed to use LLMs and the projects were all 
+            structured as competitions. They were graded based on 
+            the scores we got from each competition. Top 20% got 5/5, next 20% got 4/5 and so on.
+            There was a trial and a real competition for each project. You could use the best score
+            from both for the ranking.
+            I wanted to share what strategies my group made for each project. This will be mostly
+            helpful for future CS 540 students that have similar projects. However, anyone can take a
+            look and try the same project!
+            Lastly, thanks to Nick Newcomer, Samved Vivek and Professor Wu
+            for a wonderful experience ~🥪.
+        </p>
+
+        <!-- A1 -->
+        <section class="mb-10">
+            <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
+                <h2 class="text-xl">A1: 3D shape recognition with neural networks (team project)</h2>
+            </div>
+            <div class = "mb-4">
+                <img src="A1C general.png">
+                <span class = "font-bold">Project description:</span> Train a neural network to recognize 3D shapes (sphere, cube, 
+                tetrahedron). The neural network is connected with two hidden layers (ReLU activation, a maximum of 128 units),
+                input layer with 1024 units, and output layer with 3 units (softmax activation). The more certain your network is 
+                about correct predictions on the test set, and the fewer units you use in hidden layers, the higher your score.
+            </div>
+            <div class = "mb-4">
+                <span class = "font-bold">Goal:</span><br>
+                (1) Make correct predictions.<br>
+                (2) Use fewer units.
+            </div> 
+            <div class = "mb-4">
+                <p class = "mb-2">
+                    <span class = "font-bold">Strategy:</span> The overall strategy was to make correct predictions and submit 
+                    tricky sets so that other players outside my team have trouble identifying the image.
+                </p>
+                <p class = "mb-2">
+                    (a) In order to achieve goal (1) we trained with a lot of images like 40k images with noise 5, 10, 15, 20,
+                    40, 60. The reason for this was because training the NN with above noise 60 or tricky data sets dropped our 
+                    accuracy on easy images (noise below 60) and these were free points we should have gotten. So we tried minimizing 
+                    training with tricky data sets (to avoid overfitting).
+                </p>
+                <p class = "mb-2">
+                    (b) We were able to optimize the number of hidden units to 32, 16. It did no harm on the accuracy for goal (1) 
+                    and the network had enough space to "memorize" (storing the exact pixel patterns) the tricky dataset that we were 
+                    going to submit. Our tricky dataset was inverted pixels.
+                    <img src="A1C competition.png">
+                </p>
+            </div>
+            <div>
+                <span class = "font-bold">Result:</span> My team and I got a 5/5. Our strategy worked because we had enough number of 
+                teammates to submit the same tricky dataset that came out as the test set on the competition. However, be careful of spies. 
+                Someone might just steal your information about what you will submit and train their network while submitting a different 
+                test set. Ironically, we had to know who we trusted from the first project.
+            </div>  
+        </section>
+
+        <!-- A2 -->
+        <section class="mb-10">
+            <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
+                <h2 class="text-xl">A2: Self driving cars with neural networks (team project)</h2>
+            </div>
+            <div class = "mb-4">
+                <img src="A2C general.png">
+                <span class = "font-bold">Project description:</span> Train a neural network with 2 hidden layers (ReLU activation, 
+                a maximum of 100 units in each layer) and input layer with k units, and output layer with 4 units 
+                (softmax activation), where k is the number of sensors in front of the car. Drive the car around a 15-sided polygon
+                track maximizing total distance and minimizing k.
+            </div>
+            <div class = "mb-4">
+                <span class = "font-bold">Goal:</span><br>
+                (1) Maximize distance.<br>
+                (2) Minimize the number of k.
+            </div> 
+            <div class = "mb-4">
+                <p class = "mb-2">
+                    <span class = "font-bold">Strategy:</span> I focused on goal (1) first and optimized goal (2) later.
+                </p>
+                <p class = "mb-2">
+                    (a) In order to achieve goal (1) I generated many training data myself that drove near the edge of the polygon.
+                    I used supervised learning to train the network. I optimized the k value and I was able to do well with k = 5.
+                </p>
+                <p class = "mb-2">
+                    (b) For my second car I wanted to be safe (being cautious of crashes, since if I crashed there was a penalty) 
+                    so I made training data that ran near the center. I used this data to train the network.
+                </p>
+            </div> 
+            <div>
+                <span class = "font-bold">Result:</span> I got a 5/5. The truth was, there weren't many cars in the trial 
+                so I was able to achieve my expected score. However on the real competition there were so many cars and 
+                therefore one slowly moving car made everyone crash into each other. I think this will be fixed for the 
+                future semesters. Additionally, looking back, maybe using reinforcement learning here could be a solution.
+            </div> 
+        </section>
+
+        <!-- A3 -->
+        <section class="mb-10">
+            <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
+                <h2 class="text-xl">A3: Cancer diagnosis with decision trees (team project)</h2>
+            </div>
+            <div class = "mb-4">
+                <img src="A3C general.png">
+                <span class = "font-bold">Project description:</span> Build a decision tree to diagnose whether a patient 
+                has cancer based on their medical test results. We used the Wisconsin Breast Cancer dataset. The score is 
+                based on how much my tree classifies against the test set correctly and the smaller number of nodes I use.
+            </div>
+            <div class = "mb-4">
+                <span class = "font-bold">Goal:</span><br>
+                (1) Classify correctly.<br>
+                (2) Use a smaller number of nodes.
+            </div> 
+            <div class = "mb-4">
+                <p class = "mb-2">
+                    <span class = "font-bold">Strategy:</span> We could submit patients for the test set. I was part of a larger team 
+                    and therefore we were sure our team could make some effect on the test set.
+                </p>
+                <p class = "mb-2">
+                    (a) Goals (1) and (2) conflict. Therefore we had to choose. My team chose to find the optimal 
+                    number of nodes to classify all the patients in the data set correctly (goal (1)). That only needed 47 nodes for 
+                    683 patients. We got it using size-optimizing lookahead search that uses ID3's information-gain splitting criterion 
+                    but replaces ID3's greedy split-selection with a lookahead that minimizes total tree size.
+                </p>
+                <p class= "mb-2">
+                    (b) We then submitted the trickiest patients for the test set. (So that players who used smaller nodes
+                    get penalized)
+                </p>
+            </div>
+            <div>
+                <span class = "font-bold">Result:</span> My team and I got a 5/5. If you have a good amount of team members 
+                this is a good strategy.
+            </div> 
+        </section>
+
+        <!-- A4 -->
+        <section class="mb-10">
+            <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
+                <h2 class="text-xl">A4: Convolutional neural networks to classify hand-written digits of alien language (team project)</h2>
+            </div>
+            <div class = "mb-4">
+                <img src="A4C general.png">
+                <span class = "font-bold">Project description:</span> We are given a convolutional neural network to classify 
+                digits of alien language (base 8). The alien language was 2/3/5 cubic bezier curves connecting random points. 
+                Students get to choose from one of the 2(easy) / 3(medium) / 5(hard) bezier curves teams to compete in. 
+                For each team, there is a 
+                corresponding network with a groundtruth image of the 8 digits that only the teaching team knows. 
+                We are only given the network and some examples of the alien language
+                to find what those 8 groundtruth digit images are.
+            </div> 
+            <div class = "mb-4">
+                <span class = "font-bold">Goal:</span> 
+                Submit our own images that are,,,<br>
+                (1) Classified as {0,1,...,7} with higher certainty (in simple words, higher confidence).<br>
+                (2) Actually getting the image correct (correct is defined as less than 200 pixels predicted 
+                incorrectly with the groundtruth images, this gave us a huge bonus).
+            </div>
+            <div class = "mb-4">
+                <p class = "mb-2">
+                    <span class = "font-bold">Strategy:</span> We understood that getting the image correct was hard at first.
+                    Therefore, we focused on getting a higher confidence first.
+                </p>
+                <p class = "mb-2">
+                    (a) Starting from random images and using 
+                    PGD (Projected Gradient Descent), it was very easy to get the CNN to identify the image with higher certainty.
+                    However, the images were completely broken (meaning not even close to the actual example images the 
+                    professor showed us), so we could not expect getting the image correct this way.
+                </p>
+                <p class = "mb-2">
+                    (After guaranteeing we could do goal (1) easily, we moved onto goal (2) since it gave a huge incentive to us.
+                    In order to achieve goal (2) we wanted to find a generalized pattern for each digit so that we could create 
+                    a digit based on that pattern.)
+                </p>
+                <p class = "mb-2">
+                    (b) We made LLMs draw random cubic bezier curves. The intention was to get data samples.
+                    We considered curves that were above 0.8 confidence for a digit as a correct data for that digit.
+                    Surprisingly, team 5(hard) bezier curves was the easiest to make data. This led us to compete in this team.
+                </p>
+                <p class = "mb-2">
+                    (c) So with the data we started making images based on the particular pattern there was for each digit. 
+                </p> 
+                <p class = "mb-2">
+                    (We made a metric to evaluate the images we made.
+                    It was called the hit rate. So for each digit we have many data for it. 
+                    For each data we check if we got it right (difference under 200 pixels). 
+                    Then for each digit we get a percentage like 88%. 
+                    (ex. For digit 0 suppose we have 9000 data. After we make an image based on the pattern,
+                    we compare it with the 9000 data, and 
+                    then we have like 8000/9000 that are hit. That is how we get the hit rate for each digit.) 
+                    We tried optimizing the hit rate for each digit but there seemed to be a certain threshold we couldn't go above.)
+                    <img src="A4C spread.png">
+                </p>
+                <p class>
+                    (d) Then we started investigating why (c) wasn't giving great answers. The hit rates were digit 4: 90%, 
+                    digit 3: 78%, digit 7: 81%, digit 6: 75%, digit 0: 71%, digit 5: 51%, digit 2: 30%. We thought there
+                    might be different styles for each digit, and there was. 
+                    The more styles it had, the harder it was to generalize. So we decided to divide our group members'
+                    images into different styles, so that if at least one got it right we all could get the bonus.
+                    This improved our hit rates
+                    as a team. When evaluating hit rate this time if anyone of us got it right we considered it as right. 
+                    Most of the digit's team hit rates were 85%~95%. We considered these as an actual percentage of getting it 
+                    right on the competition.
+                    <img src="A4C styles.png">
+                </p>
+            </div> 
+            <div>
+                <span class = "font-bold">Result:</span> I got a 5/5. Surprisingly, there was a problem with this project.
+                The groundtruth no longer existed... Therefore we got graded based only on the confidence scores. I believe 
+                this will be fixed for future semesters. Try implementing my method!
+            </div> 
+        </section>
+
+        <!-- A5 -->
+        <section class="mb-10">
+            <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
+                <h2 class="text-xl">A5: Debate with the agent in the embedding space (team project)</h2>
+            </div>
+            <div class = "mb-4">
+                <img src="A5C general.png">
+                <span class = "font-bold">Project description:</span> We debate with an agent to convince it of an opinion. There are six agents
+                    (therefore six debate teams) to choose from and compete. Each person in a team prepares ten lists of english
+                    sentences and one opinion. The agent uses the Universal Sentence Encoder to convert my ten sentences into
+                    512 dimensional vectors in the embedding space and compute a weighted average with its original opinion vector.
+
+            </div>
+            <div class = "mb-4">
+                <span class = "font-bold">Goal:</span><br> 
+                (1) Make the resulting average as similar as possible to my opinion.
+            </div> 
+            <div class = "mb-4">
+                <span class = "font-bold">Strategy:</span> This was relatively very simple. Teams 3,4,5 were closed teams so 
+                my group chose to compete in team 3. We all had the same opinion and the supporting sentences for the opinion.
+            </div> 
+            <div>
+                <span class = "font-bold">Result:</span> My team and I got a 5/5. This project does become very easy if you 
+                have a team to control the opinion.
+            </div> 
+        </section>
+
+        <!-- A6 -->
+        <section class="mb-10">
+            <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
+                <h2 class="text-xl">A6: Eigenfaces for face recognition on blurry images (team project)</h2>
+            </div>
+            <div class = "mb-4">
+                <img src="A6C general.png">
+                <span class = "font-bold">Project description:</span> We use eigenfaces for some emojis and use K-NN to perform
+                face recognition on noisy and blurry versions of those emojis. There are 6 teams to compete in (different types of emojis).
+                There are 100 emojis in one team.
+                Everybody votes for 10 favorite emojis and the most popular suspects become the test set in the competition.
+            </div>
+            <div class = "mb-4">
+                <span class = "font-bold">Goal:</span><br>
+                (1) K-NN prediction should be correct.<br>
+                (2) Use a smaller number of eigenfaces.
+            </div> 
+            <div class = "mb-4">
+                <p class = "mb-2">
+                    <span class = "font-bold">Strategy:</span> I was part of a large group in this competition.
+                    Therefore goal (1) was easier for me since if my team voted for the same 10 emojis, that would be the test set.
+                    I would be able to test until I get the right eigenfaces for this. So my team could choose from 
+                    two options. Make a hard test set so we penalize the others with getting the prediction wrong or
+                    we could make a very easy test set and use a smaller number of eigenfaces. We chose the second one.
+                </p>
+                <p class = "mb-2">
+                    (a) In order to achieve goal (2) we tried many things other than just relying on the suspect list.
+                    Weighting our suspects, weighting our confusers down, training only on 
+                    our suspects and maybe some confusing emojis. None of them led to a smaller number of eigenfaces.
+                </p>
+                <p class = "mb-2">
+                    (b) The one thing that affected the number of eigenfaces eventually was plain PCA (Principal Component Analysis)
+                    on special suspects that were easily differentiable and well survived the corruption (noise = 10, blur = 1).
+                    We were able to find the best suspect list for each of the teams. Most were available with 3 or 4 eigenfaces.
+                    (We could even lower the number of eigenfaces however, there was a risk of lowering it because it might actually get
+                    the K-NN prediction wrong. We had to look at this as a probability game since the noise = 10 and blur = 1 was 
+                    randomly applied on the image, so sometimes the K-NN prediction came out wrong)
+                </p>
+            </div> 
+            <div>
+                <span class = "font-bold">Result:</span> I got a 4/5. We were able to get good scores
+                with k = 4 and save k = 3 for the trial competition (I believe most people didn't know k could be this small
+                at this time). However for the real competition, there were some people in 
+                other teams that sacrificed themselves like using k = 1024 so that the whole team could get a
+                bonus of being smaller than the average k used for that team. Therefore my group and I got a 4/5 for this 
+                competition. This is the project I regret not sacrificing. 
+            </div> 
+        </section>
+
+        <!-- A7 -->
+        <section class="mb-10">
+            <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
+                <h2 class="text-xl">A7: Shopping at the lowest price with greedy search (solo project)</h2>
+            </div>
+            <div class = "mb-4">
+                <img src="A7C general.png">
+                <span class = "font-bold">Project description:</span> We have two cars to pick up groceries. 
+                For each map there is a graph, we have to submit two routes to get as many items from our individual 
+                shopping list at the lowest price. Our score is the sum of (10 - price) for each shopping item we got
+                with the total distance of moving limited to 5000 miles. 
+            </div>
+            <div class = "mb-4">
+                <span class = "font-bold">Goal:</span><br>
+                (1) Get the item quickly. (If someone else takes the item, I lose it)<br>
+                (2) Achieve high score.
+            </div> 
+            <div class = "mb-4">
+                <p class = "mb-2">
+                    <span class = "font-bold">Strategy:</span> First you have to identify your items. You have to identify 
+                    by level. Hardest = scarce + cheap, medium = scarce + pricey, easy = abundant. This sets you up for goal (1) 
+                    and (2).
+                </p>
+                <p class = "mb-2">
+                    (a) In order to get the item quickly. The only consideration is the distance to the item since 
+                    the speed is fixed (every car has the same speed). Therefore, in order to achieve goal (1) you have to 
+                    pick the starting point near the hardest items. 
+                </p>
+                <p class = "mb-2">
+                    (b) After picking the good starting point, I used greedy, beam, local search with fixed weights 
+                    hardest as 6, medium as 4, easy as 1 so that the route was biased to securing hard items first. 
+                    This made me able to achieve goal (2).
+                </p>
+            </div> 
+            <div>
+                <span class = "font-bold">Result:</span> I got a 5/5. I got it from my trial. For the competition however,
+                I did worse, I switched the team to a map that had a better advantage for me where the hard items were near each other.
+                I suspect the team I switched to was already a group of students that had a strategy to divide the places to 
+                secure their items. If you play as a team in this project, it does seem like a good strategy to divide up 
+                the sections of where you start and get the items.
+            </div> 
+        </section>
+
+        <!-- A8 -->
+        <section class="mb-10">
+            <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
+                <h2 class="text-xl">A8: Connect Four using policy neural networks (solo project)</h2>
+            </div>
+            <div class = "mb-4">
+                <img src="A8C general.png">
+                <span class = "font-bold">Project description:</span> Using a deterministic policy neural network
+                (2 hidden layers with ReLU activation and softmax output layer with 7 units) we play connect four 
+                against other students. The score is calculated as w + 0.5t - (1/42)h (w: number of wins, t:
+                number of ties, h: number of hidden units). 
+            </div>
+            <div class = "mb-4">
+                <span class = "font-bold">Goal:</span><br>
+                (1) Win or tie as much as possible.<br>
+                (2) Use smaller number of hidden units.
+            </div> 
+            <div class = "mb-4">
+                <p class = "mb-2">
+                    <span class = "font-bold">Strategy:</span> I had the choice of using imitation learning, RL, imitation learning
+                    + RL. Personally I have tried all of them out and imitation learning was the best. 
+                    The overall system was choose a teacher and train my network.
+                </p>
+                <p class = "mb-2">
+                    (a) I focused on goal (1) first.
+                    First I focused on making a good teacher. There were a lot of choices to make.
+                    I could choose minimax or monte carlo tree search as the algorithm.
+                    I had to make decisions about the depth and heuristic as well.
+                    The teacher I eventually used was
+                    the minimax algorithm with depth 3. My heuristic was 
+                    windowed threat scoring (rewarding my near-complete lines, penalizing the opponent's, ignoring dead windows) 
+                    plus a center bonus. I made data from this teacher and trained my network. For testing my network 
+                    I used a metric called "win rate" which was the win rate against some opponents I made. The opponents 
+                    were random, network with easy heuristic, my network with smaller hidden units, my network with larger 
+                    hidden units, and minimax (the teacher itself).
+                </p>
+                <p class = "mb-2">
+                    (b) Something important I noticed through the trial was that, my network wasn't really picking rational
+                    choices. I investigated the reason why and the reason was because of how I trained it. The teacher (minimax
+                    algorithm) didn't make any mistakes like my network did. It was just my network that was making dumb choices.
+                    Therefore I realized I wasn't careful with
+                    the data I gave to my network to train. The data I generated were random board positions and the 
+                    best moves given from the teacher. I intentionally gave more common-sense positions (positions 
+                    where you must place, ex. where there are already 3 pieces) as the data. This boosted my win rate.
+                    However, it wasn't always 100 percent since there was a limit to the unit size.
+                </p>
+                <p class = "mb-2">
+                    (c) Next in order to achieve goal (2), I tested my network with lots of combinations of hidden layers.
+                    16x16, 16x32, 32x32, 64x64... The best combination for me was 32x32.
+                </p>
+            </div> 
+            <div>
+                <span class = "font-bold">Result:</span> I got a 5/5. There seemed
+                to be players with bigger networks than me. Maybe taking the risk of a bigger network and winning more
+                is better? Also always make sure you aren't always playing against rational players. When you
+                test your network yourself, make sure to include irrational players as opponents.
+            </div> 
+        </section>
+
+        <!-- A9 -->
+        <section class="mb-10">
+            <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
+                <h2 class="text-xl">A9: Flappy bird using deep reinforcement learning (solo project)</h2>
+            </div>
+            <div class = "mb-4">
+                <img src="A9C general.png">
+                <span class = "font-bold">Project description:</span> Train a neural network to play flappy bird. We are able to have 
+                three inputs horizontal and vertical distances to the top and bottom of the next obstacle or pipe, and one output 
+                (whether to flap, 0 means no flap, 1 means flap). We can have 
+                two hidden layers with a maximum of 100 units in each layer, ReLU activation in hidden layers, 
+                and logistic activation in the output layer. We get +10 for the pipes we pass, -z when we hit the pipe at z units
+                away from the center of the gap, +20 if we get through all the pipes. (The maps are random!) 
+
+            </div>
+            <div class = "mb-4">
+                <span class = "font-bold">Goal:</span><br>
+                (1) Pass the pipes.<br>
+                (2) Near the center of the gap.
+            </div> 
+            <div class = "mb-4">
+                <p class = "mb-2">
+                    <span class = "font-bold">Strategy:</span> I tried imitation learning, imitation learning + RL, RL only to train
+                    the network. Eventually I chose using RL only. I will write about the whole process for this since I wasn't 
+                    able to get through the whole map. Maybe you can.
+                </p>
+                <p class = "mb-2">
+                    (a) First I tried imitation learning with the given data from Part 1 and Part 2 (the regular components).
+                    The data was basically Q-value iteration until we got the optimal action for an environment. With a reasonable
+                    reward I was able to pass about 17 pipes. I tried many kinds of rewards. I gave wall-avoidance penalties of many shapes 
+                    (flat, -1/d, -1/d², -1/d³), asymmetric (harsher on the ceiling since a +3 flap overshoots easily),
+                    tried going near the edges since sometimes if I aim to the center of the gap I crash into the ceiling or floor. There 
+                    was a limit to this approach. I wasn't able to pass further than 17 pipes.
+                </p>
+                <p class = "mb-2">
+                    (b) Second I tried RL on top of imitation learning. So from the network that trained above, I tried RL on top of it.
+                    However this never pushed my scores. Lastly I pivoted to RL only. I started with REINFORCE and switched to either 
+                    A2C or PPO. This seemed to make the decision boundaries sharper. These kinds of approaches made my bird
+                    go through about 20 pipes. But that was the end for it. I tried changing my rewards and the training time. One thing
+                    for sure is that I trained my network overnight. It made it worse. My bird's decision boundary became very smudgy
+                    and it seemed it had overfitted to my test maps. So eventually I submitted my network with a training time of like
+                    1 hour? 
+                    <img src="A9C boundary.png">
+                </p> 
+            </div> 
+            <div>
+                <span class = "font-bold">Result:</span> I got a 5/5. Many of the top players seemed to crash where I crashed (about 20 pipes).
+                Maybe the future players can directly try RL only and experiment with delicate reward and training time.
+            </div> 
+        </section>
+
+        <!-- A10 -->
+        <section class="mb-10">
+            <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
+                <h2 class="text-xl">A10: Soccer game with multi agent reinforcement learning (solo project)</h2>
+            </div>
+            <div class = "mb-4">
+                <img src="A10C general.png">
+                <span class = "font-bold">Project description:</span> Train a policy network (5 input units, 2 hidden layers, 
+                fewer than 100 units in each layer, ReLU activation, and 4 output units (for up, down, left, right), softmax activation)
+                to play soccer with other policies in a 7x5 grid. The score was calculated mostly with wins and ties (w + 0.5t).
+            </div>
+            <div class = "mb-4">
+                <span class = "font-bold">Goal:</span><br>
+                (1) Win as much as possible.<br>
+                (2) Tie if you can't win.
+            </div> 
+            <div class = "mb-4">
+                <p class = "mb-2">
+                    <span class = "font-bold">Strategy:</span> There were two things I thought of solving the markov game 
+                    presented here. One was minimax value iteration the other was deep MARL. I eventually picked value iteration 
+                    and did supervised learning.
+                </p>
+                <p class = "mb-2">
+                    (a) The truth was that the state space was small. The state is (x0, y0, x1, y1, b) so the upper bound 
+                    was 35x34x2 = 2380 (since two players can't share the same cell). Therefore instead of deep MARL I computed
+                    the game theoretic value against the worst case opponent for every state (minimax value iteration). 
+                    I trained my network with this just 
+                    as supervised learning. However, I did have a decision to make.
+                    I could make a safe policy which was pure minimax, this never loses to anyone but it ties to irrational opponents 
+                    because it always expects for a rational good player. On the other hand, I had an aggressive policy by changing the safe policy 
+                    with a relaxed safety filter and a more aggressive tie break. It beat many more irrational players but sometimes 
+                    it lost against strong players. Therefore, in order to achieve goal (1) and (2) 
+                    I eventually submitted the safe policy network.
+                    (I did try deep MARL but eventually it wasn't as good as my minimax value iteration approach).
+                </p>
+            </div>
+            <div>
+                <span class = "font-bold">Result:</span> I got a 5/5. I had the choice of choosing from either safe vs aggressive. 
+                I submitted the safe policy for both the trial and real competition. One lesson I learned was that in real life
+                the games aren't always composed of rational players.  Maybe I could have submitted aggressive for the trial 
+                and safe for the real competition.
+            </div>  
+        </section>
+
+        <!-- Tip -->
+        <section class="mb-10">
+            <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
+                <h2 class="text-xl">Final advice</h2>
+            </div>
+            <div class = "mb-4">
+                (0) Study the material (the more you know the better you compete).<br>
+                (1) Find a team (it not only helps you to win, but think about many more about the project).<br>
+                (2) Identify your goal for each project.<br>
+                (3) Find a systematic way to achieve the goal.<br>
+                (4) Participate on both the trial & real competition (it might save you or you might be able to try cool stuff).
+            </div>  
+        </section>
+
+    </main>
+    
+</body>
+
+</html>

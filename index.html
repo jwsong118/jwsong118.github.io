@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,16 +17,15 @@
 <body class="bg-stone-50 text-stone-900 min-h-screen">
 
     <nav class="sticky top-0 z-50 w-full bg-white border-b border-stone-300">
-        <div class="max-w-3xl mx-auto flex items-center px-6 py-4">
+        <div class="max-w-4xl mx-auto flex items-center px-6 py-4">
             <div class="flex gap-6">
                 <a href="index.html" class="hover:text-amber-700 transition-colors" aria-current="page">Home</a>
-                <!-- <a href="coursework.html" class="hover:text-amber-700 transition-colors">Coursework</a> -->
-                <!-- <a href="blog.html" class="hover:text-amber-700 transition-colors">Blog</a> -->
+                <a href="research.html" class="hover:text-amber-700 transition-colors" aria-current="page">Research/Projects</a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-3xl mx-auto px-6 space-y-16 pb-24">
+    <main class="max-w-4xl mx-auto px-6 space-y-16 pb-24">
 
         <!-- INTRO -->
         <section class="flex flex-col sm:flex-row items-center gap-8 pt-8">
@@ -44,7 +44,7 @@
                 </p>
                 <p class="text-amber-700 leading-relaxed">
                     <a href="https://github.com/jwsong118" class="hover:underline">
-                        Github: <i class="fab fa-github"></i>
+                        Github <i class="fab fa-github"></i>
                     </a>
                     <!-- <a class="mt-3 text-stone-900 leading-relaxed">|</a> --> 
                 </p>
@@ -54,29 +54,23 @@
             </div>
         </section>
 
-        
-
-        <!-- COURSEWORK
-        <a href="coursework.html"
-            class="group flex justify-between items-center p-6 bg-white rounded-2xl border border-stone-200 hover:border-amber-700 hover:shadow-md transition-all">
-            <div>
-            <h2 class="text-xl font-bold">Coursework</h2>
-            <p class="text-sm text-stone-800 mt-1">Summary of CS related courses I've taken at UW&ndash;Madison</p>
-            </div>
-            <span class="text-amber-700 group-hover:translate-x-1 transition-transform">&rarr;</span>
-        </a>
-        -->
-
-        <!-- BLOG
-        <a href="blog.html"
-            class="group flex justify-between items-center p-6 bg-white rounded-2xl border border-stone-200 hover:border-amber-700 hover:shadow-md transition-all">
-            <div>
-            <h2 class="text-xl font-bold">Blog</h2>
-            <p class="text-sm text-stone-800 mt-1">My thoughts</p>
-            </div>
-            <span class="text-amber-700 group-hover:translate-x-1 transition-transform">&rarr;</span>
-        </a>
-        -->
+        <!-- Research/Projects -->
+        <section class="mb-10">
+                <div class="flex items-baseline justify-between border-b border-stone-300 pb-2 mb-4">
+                    <h2 class="text-xl">Research/Projects</h2>
+                </div>
+                <ul class="list-disc ml-5 space-y-3">
+                    <li>
+                        <div class="flex flex-col">
+                            CS 540: Intro to Artificial Intelligence (with professor Young Wu) at UW-Madison held
+                            competitions on all the ten projects we had over the semester. Take a look at how I competed.   
+                        </div>
+                        <a href="research.html" class="text-amber-700 hover:underline">
+                            View research/projects <i class="fa-solid fa-folder"></i>
+                        </a>  
+                    </li>
+                </ul>
+        </section>
 
         <!-- Education-->
         <section class="mb-10">
@@ -85,19 +79,20 @@
                 </div>
                 <ul class="list-disc ml-5 space-y-3">
                     <li>
-                        <div class="flex flex-col gap-1">
+                        <div class="flex flex-col">
                             <span>B.S. in Computer Science, University of Wisconsin&ndash;Madison (expected graduation: May 2027)</span>
                             <span>Certificate in Mathematics, University of Wisconsin&ndash;Madison (expected graduation: May 2027)</span>
-                            <div>
-                                <a href="coursework.html" class="text-amber-700 hover:underline">
-                                    [Coursework <i class="fas fa-book text-xs"></i>]
-                                </a>
-                            </div>
+                            <a href="coursework.html" class="text-amber-700 hover:underline">
+                                View coursework <i class="fas fa-book text-xs"></i>
+                            </a>
+                            
                         </div>
                     </li>
                 </ul>
         </section>
 
     </main>
+
 </body>
+
 </html>
